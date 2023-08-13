@@ -18,7 +18,6 @@ def get_data():
         query1 = 'SELECT * FROM public.dummy_table;'
         cursor.execute(query1)  # Ganti dengan nama tabel Anda
         data = cursor.fetchall()
-        print(data)
         cursor.close()
         conn.close()
 
@@ -27,4 +26,4 @@ def get_data():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=3001, debug=True)
+    app.run(debug=True)
